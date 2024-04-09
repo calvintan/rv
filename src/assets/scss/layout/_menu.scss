@@ -1,0 +1,144 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  background: transparent url(../images/bg-hero.jpg) center no-repeat;
+  background-size: cover;
+  z-index: 100;
+
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+
+  /* Notes: Should I darken the background? */
+  // &:after {
+  //   content: '';
+  //   display: block;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100vw;
+  //   height: 100vh;
+  //   background: black;
+  //   opacity: 0.5;
+  // }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100%;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* Notes: Does it look better centered? */
+      // top: 50%;
+      // left: 50%;
+      // transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      object-fit: cover;
+    }
+
+    img.fade-in {
+      opacity: 1;
+    }
+  }
+
+  &__cover {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100%;
+    background: transparent url(../images/bg-hero.jpg) center no-repeat;
+    background-size: cover;
+  
+    mask-image: url(../images/mask.svg);
+    mask-size: cover;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+
+  &__line {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100%;
+    background: transparent url(../images/bg-line.svg) center no-repeat;
+    background-size: cover;
+  }
+
+  &__text {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100%;
+
+    .container {
+      width: inherit;
+      height: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .col {
+      position: relative;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0 0 160px;
+    list-style: none;
+    font-size: 4rem;
+    line-height: 1.5;
+    max-width: 720px;
+
+    li {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    li + li {
+      margin-top: 3rem;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      letter-spacing: -2px;
+    }
+  }
+}
+
+.overlay__contact.footer__contact {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0 0 160px;
+  flex-direction: column;
+  width: 240px;
+
+  li {
+    text-align: left;
+  }
+
+  li + li {
+    margin-top: 2rem;
+  }
+}
+
+.fade-in {
+  opacity: 1;
+}
