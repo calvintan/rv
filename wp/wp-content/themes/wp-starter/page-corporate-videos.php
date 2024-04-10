@@ -36,6 +36,37 @@
       </div>
     </div>
   </section>
+  <section class="video">
+    <div class="container-fluid">
+      <div class="row">
+        <?php
+          for ($i = 1; $i <= 6; $i++) {
+          echo '<div class="video__container col-sm-12 col-md-6 col-lg-6" id="openPopup'.$i.'">
+              <div class="video__card card-body">
+                  <video id="video'.$i.'" class="video__video" src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4"></video>
+              </div>
+          </div>';
+        }
+        ?>
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <?php
+    for ($i = 1; $i <= 6; $i++) {
+        echo '<div id="videoPopup'.$i.'" class="modal">
+            <div class="modal__content">
+              <span class="modal__close'.$i.'">&times;</span>
+              <video id="video'.$i.'" controls>
+                <source src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4" autoplay type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>';
+    }
+  ?>
 </main>
 
 <?php get_footer(); ?>
