@@ -16,6 +16,7 @@
   <div class="hero__video">
     <video autoplay loop muted>
       <source src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/hero.webm" type="video/webm">
+      <source src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/hero.mp4" type="video/mp4">
     </video>
   </div>
 </section>
@@ -26,9 +27,9 @@
       <div class="row">
         <div class="col">
           <div class="about__vid">
-            <video
-              controls
-              src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/hero.webm">
+            <video controls>
+              <source src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/relay-showreel.webm" type="video/webm">
+              <source src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/relay-showreel.mp4" type="video/mp4">
               Sorry, your browser doesn't support embedded videos.
             </video>
           </div>
