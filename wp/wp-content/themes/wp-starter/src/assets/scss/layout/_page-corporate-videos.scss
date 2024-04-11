@@ -1,0 +1,167 @@
+.corporate {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  z-index: $zindex-sticky;
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    h1 {
+      background: -webkit-linear-gradient(45deg, #BE6CB6, #5B9BC9);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+      text-transform: uppercase;
+      font-size: 5rem;
+      font-weight: bold;
+      line-height: 1.125;
+      letter-spacing: -2px;
+      position: relative;
+      z-index: $zindex-sticky;
+
+      @media (min-width: 768px) {
+        font-size: 6rem;
+      }
+
+      @media (min-width: 1200px) {
+        font-size: 7rem;
+      }
+    }
+  
+    p {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      max-width: 560px;
+    }
+  }
+  
+  &__overlay {
+      position: absolute; 
+      width: 100%; 
+      height: 100%; 
+      // top: 0;
+      // left: 0;
+      // right: 0;
+      // bottom: 0;
+      background-color: rgba(0,0,0,0.5);
+      z-index: $zindex-dropdown; 
+  }
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+
+    video {
+      position: relative;
+      min-width: 100%; 
+      min-height: 100%;
+      width: 100vw; 
+      height: 100%;
+    }
+  }
+}
+
+.about {
+  position: relative;
+  &__heading {
+    margin-top: 9rem;
+    h1 {
+      font-size: 3rem;
+    }
+    @media (min-width: 768px) {
+      font-size: 6rem;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 7rem;
+    }
+  }
+
+  &__text {
+    margin-top: 9rem;
+  }
+}
+
+.video {
+  position: relative;
+  margin-top: 9rem;
+  &__container {
+    margin: 0;
+    padding: 0;
+  }
+  &__card {
+    max-width: 50rem;
+    padding: 0;
+    margin: 0;
+    // width: 100vw;
+  }
+  &__video {
+    width: 100%;
+  }
+  video {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+
+  &__content {
+    position: relative;
+    background: linear-gradient(180deg, #482A7C -17.33%, #03041A 100%);
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  &__close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: -28px;
+  }
+  
+  video {
+    width: 100%;
+  }
+}
+
+
+
+
+
+.close:hover,
+.close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
