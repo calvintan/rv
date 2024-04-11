@@ -39,34 +39,46 @@
   <section class="video">
     <div class="container-fluid">
       <div class="row">
+        <!-- Loop through the videos and create a video card for each video -->
+        <!-- The variables can be changed to the video data from the database -->
         <?php
           for ($i = 1; $i <= 6; $i++) {
-          echo '<div class="video__container col-sm-12 col-md-6 col-lg-6" id="openPopup'.$i.'">
+              echo '<div 
+              class="video__container
+              col-sm-12 
+              col-md-6 
+              col-lg-6" 
+              id="openPopup'.$i.'">
               <div class="video__card card-body">
-                  <video id="video'.$i.'" class="video__video" src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4"></video>
-              </div>
-          </div>';
-        }
+              <video id="video'.$i.'" 
+              class="video__video" 
+              poster="//localhost/wp-content/themes/wp-starter/dist/assets/images/video-thumb-1.jpg">
+              <source src="//localhost/wp-content/themes/wp-starter/dist/assets/videos/hero.mp4" type="video/mp4"
+              </video></div></div>';
+          }
         ?>
+
 
       </div>
     </div>
     </div>
   </section>
 
+  <!-- Loop through the videos and create a modal for each video -->
+  <!-- The variables can be changed to the video data from the database -->
   <?php
     for ($i = 1; $i <= 6; $i++) {
         echo '<div id="videoPopup'.$i.'" class="modal">
-            <div class="modal__content">
-              <span class="modal__close'.$i.'">&times;</span>
-              <video id="video'.$i.'" controls>
-                <source src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4" autoplay type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>';
+                <div class="modal__content">
+                  <span class="modal__close'.$i.'">&times;</span>
+                  <video id="video'.$i.'" controls poster="//localhost/wp-content/themes/wp-starter/dist/assets/images/video-thumb-1.jpg">
+                    <source src="//localhost/wp-content/themes/wp-starter/dist/assets/videos/hero.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>';
     }
   ?>
+
 </main>
 
 <?php get_footer(); ?>
