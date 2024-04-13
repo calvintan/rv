@@ -141,3 +141,61 @@
     margin-top: 2rem;
   }
 }
+
+/* menu icon */
+.menu__icon {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+
+  span {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    top: 14px;
+    width: 32px;
+    height: 4px;
+    background-color: #fff;
+    transition-property: background-color;
+    transition-duration: 0s;
+    transition-delay: 0.2s;
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 32px;
+      height: 4px;
+      background-color: #fff;
+      transition-property: margin, transform;
+      transition-duration: 0.2s;
+      transition-delay: 0.2s, 0s;
+    }
+
+    &:before {
+      margin-top: -14px;
+
+    }
+    
+    &:after {
+      margin-top: 14px;
+    }
+  }
+}
+
+.menu__icon.active span {
+  background-color: transparent;
+
+  &:before {
+    margin-top: 0;
+    transform: rotate(45deg);
+    transition-delay: 0s, 0.2s;
+  }
+  
+  &:after {
+    margin-top: 0;
+    transform: rotate(-45deg);
+    transition-delay: 0s, 0.2s;
+  }
+}

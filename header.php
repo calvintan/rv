@@ -67,9 +67,7 @@
       </a>
       <div class="menu__wrap d-flex align-items-center gap-5">
         <a class="menu__lang" href="#">中</a>
-        <a class="burger" href="#">
-          <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/icon-menu.svg" alt="Menu icon">
-        </a>
+        <a class="menu__icon" href="#"><span></span></a>
       </div>
     </div>
   </div>
