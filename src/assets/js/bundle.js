@@ -2,10 +2,11 @@ import $ from "jquery";
 
 $(document).ready(() => {
   // Fullscreen menu
-  $(".hamburger").on('click', function(e) {
+  $(".burger").on('click', function(e) {
     e.preventDefault;
-    console.log('testing!');
-    $(".overlay").toggleClass('fade-in');
+    // Show the menu and prevent scrolling
+    $('body').toggleClass('no-scroll');
+    $(".overlay").fadeToggle();
   });
 
   $(".overlay__menu li:nth-child(1) a").mouseover(function () {

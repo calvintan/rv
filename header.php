@@ -18,12 +18,6 @@
 </head>
 <body <?php body_class(); ?>>
 
-<!--
-  <header role="banner">
-    <nav class="nav" role="navigation"></nav>
-  </header>
--->
-
 <section class="overlay">
   <div class="overlay__bg">
     <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/bg-menu-1.jpg" alt="">
@@ -73,7 +67,7 @@
       </a>
       <div class="menu__wrap d-flex align-items-center gap-5">
         <a class="menu__lang" href="#">中</a>
-        <a class="hamburger" href="#">
+        <a class="burger" href="#">
           <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/icon-menu.svg" alt="Menu icon">
         </a>
       </div>
