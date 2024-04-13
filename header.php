@@ -33,15 +33,15 @@
         <div class="col">
 
           <ul class="overlay__menu">
-            <li><a href="#">Who We Are</a></li>
-            <li><a href="#">Investor Roadshow Videos</a></li>
-            <li><a href="#">Documentaries</a></li>
+            <li><a href="<?php echo esc_url(site_url('/about/')); ?>">Who We Are</a></li>
+            <li><a href="<?php echo esc_url(site_url('/corporate-videos/')); ?>">Investor Roadshow Videos</a></li>
+            <li><a href="<?php echo esc_url(site_url('/documentaries/')); ?>">Documentaries</a></li>
           </ul>
 
           <ul class="overlay__contact footer__contact">
             <li>
               <h3>Email</h3>
-              <a href="#">info@relay.video</a>
+              <a href="mailto:info@relay.video">info@relay.video</a>
             </li>
             <li>
               <h3>WeChat</h3>

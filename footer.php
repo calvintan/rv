@@ -6,7 +6,7 @@
   <ul class="footer__contact">
     <li>
       <h3>Email</h3>
-      <a href="#">info@relay.video</a>
+      <a href="mailto:info@relay.video">info@relay.video</a>
     </li>
     <li>
       <h3>WeChat</h3>

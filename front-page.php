@@ -41,7 +41,7 @@
             <p>We're a bilingual Asia-based team with a global network of resources - both here in Asia and around the world. We're experts in <span>communicating stories to a global audience</span>.</p>
 
             <div class="btn-gradient">
-              <a href="#">Learn More</a>
+              <a href="<?php echo esc_url(site_url('/about/')); ?>">Learn More</a>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@
                 
                 <p>We've helped TME, Pinduoduo, Mogujie, Sogou, Meituan, 360Finance, Pop Mart, Hesai, Leap Motor and many more companies to raise over 8 billion USD through making videos to explain their company and products in roadshow presentations.</p>
 
-                <a href="#">Learn More</a>
+                <a href="<?php echo esc_url(site_url('/corporate-videos/')); ?>">Learn More</a>
               </div>
             </div>
             
@@ -82,7 +82,7 @@
 
                 <p>With over 20 years of experience in long form documentaries, we've seen it all and are excited to do even more! We specialize in survivalist documentaries (check out our work with Ed Stafford!) and VR/360 documentaries (we produced the world's first VR survivalist show in 360).</p>
 
-                <a href="#">Learn More</a>
+                <a href="<?php echo esc_url(site_url('/documentaries/')); ?>">Learn More</a>
               </div>
             </div>
           </div>
