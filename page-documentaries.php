@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <p>This Documentaries page</p>
+        <p>This is Documentaries page</p>
         <?php
           $press_query = array(
             'post_type' => 'video',
