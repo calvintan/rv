@@ -1,5 +1,9 @@
 <?php get_header(); ?>
 
+<!-- ********************************************************************
+hero section (shadow overlay + background video + center headings)
+******************************************************************** -->
+
 <section class="corporate">
   <div class="corporate__text">
     <div class="container">
@@ -15,6 +19,10 @@
     </video>
   </div>
 </section>
+
+<!-- ********************************************************************
+main setcion
+******************************************************************** -->
 
 <main role="main">
   <section class="intro">
@@ -35,12 +43,20 @@
     </div>
   </section>
 
-  <!-- <section class="example">
+<!-- ********************************************************************
+looks like this is a test section, I will just leave it here
+******************************************************************** -->
+
+  <section class="example">
     <div>test</div>
     <div>test</div>
     <div>test</div>
     <div>test</div>
-  </section> -->
+  </section>
+
+<!-- ********************************************************************
+main setcion
+******************************************************************** -->
 
   <section class="video">
     <div class="container-fluid">
@@ -80,7 +96,7 @@
               <div class="video__card card-body">
               <video id="video'.$i.'" 
               class="video__video" 
-              poster="//localhost/relay/wp-content/themes/wp-starter/dist/assets/images/corporate-'.$i.'.jpg">
+              poster="https://images.pexels.com/photos/145683/pexels-photo-145683.jpeg">
                 <source src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4" type="video/mp4">
                 <source src="https://dl6.webmfiles.org/cars-nyc_HD.webm" type="video/webm">
               </video></div></div>';
@@ -100,7 +116,7 @@
         echo '<div id="videoPopup-corporate'.$i.'" class="modal">
                 <div class="modal__content">
                   <span class="modal__close-corporate'.$i.'">&times;</span>
-                  <video id="video'.$i.'" controls poster="//localhost/relay/wp-content/themes/wp-starter/dist/assets/images/video-thumb-1.jpg">
+                  <video id="video'.$i.'" controls poster="https://images.pexels.com/photos/145683/pexels-photo-145683.jpeg">
                     <source src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4" type="video/mp4">
                     <source src="https://dl6.webmfiles.org/cars-nyc_HD.webm" type="video/webm">
                   </video>

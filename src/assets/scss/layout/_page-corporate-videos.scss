@@ -1,3 +1,8 @@
+// ********************************************************************
+//
+// Corporate Videos Page
+//
+// ********************************************************************
 .corporate {
   position: relative;
   width: 100vw;
@@ -163,6 +168,9 @@
 
 .modal {
   display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   z-index: 1;
   left: 0;

@@ -72,7 +72,7 @@ class VideoModal {
 
   open() {
     if (this.modal) {
-      this.modal.style.display = "block";
+      this.modal.style.display = "flex";
       this.modal.style.overflow = "hidden";
       document.body.style.overflow = "hidden"; // Prevent scrolling on the body
     } else {
@@ -91,12 +91,18 @@ class VideoModal {
   }
 }
 
-// Instantiate the class for a single video modal
+// ********************************************************************
+//
+// VideoModal instances
+//
+// ********************************************************************
+
+// Instantiate the class for a single video modal for bottom of documentaries page
 new VideoModal("videoPopup-sv", "openPopup-sv", "modal__close-sv");
 
 // Create instances of VideoModal for multiple videos using a loop for corporate videos page
 // for loop variables can be changed to match the number of videos on the CMS
-for (let i = 1; i <= 4; i++) {
+for (let i = 1; i <= 6; i++) {
   new VideoModal(`videoPopup-corporate${i}`, `openPopup-corporate${i}`, `modal__close-corporate${i}`);
 }
 

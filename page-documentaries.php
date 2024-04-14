@@ -1,5 +1,8 @@
 <?php get_header(); ?>
 
+<!-- ********************************************************************
+hero section (shadow overlay + background video + center headings)
+******************************************************************** -->
 <section class="documentaries">
   <div class="documentaries__text">
     <div class="container">
@@ -16,6 +19,9 @@
   </div>
 </section>
 
+<!-- ********************************************************************
+main section
+******************************************************************** -->
 <main role="main">
   <section class="intro">
     <div class="container">
@@ -35,6 +41,9 @@
     </div>
   </section>
 
+  <!-- ********************************************************************
+  collection videos section
+  ******************************************************************** -->
   <section class="documentaries__collection-videos">
     <div class="container">
       <div class="row">
@@ -78,8 +87,11 @@
         </div>
     </div>
   </section>
-  
-  <!-- single video section -->
+
+  <!-- ********************************************************************
+  single video section
+  ******************************************************************** -->
+
   <section id="openPopup-sv" class="documentaries__single-video ">
     <div class="container">
     <div class="row">
