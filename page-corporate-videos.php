@@ -35,61 +35,34 @@
     </div>
   </section>
 
-  <section class="example">
-    <div>test</div>
-    <div>test</div>
-    <div>test</div>
-    <div>test</div>
-  </section>
+  <section class="project">
+    <!-- Loop over using WP query loop -->
+    <?php
+      $corporate_query = array(
+        'post_type' => 'video',
+        'posts_per_page' => -1,
+        'post_status' => 'publish',
+        'meta_key' => 'type',
+        'meta_value' => 'corporate',
+        'order' => 'ASC'
+      );
+      $corporate = new WP_Query( $corporate_query );
+    ?>
 
-  <section class="video">
-    <div class="container-fluid">
-      <div class="row">
-        <?php
-          $corporate_query = array(
-            'post_type' => 'video',
-            'posts_per_page' => -1,
-            'post_status' => 'publish',
-            'meta_key' => 'type',
-            'meta_value' => 'corporate'
-          );
-          $corporate = new WP_Query( $corporate_query );
-        ?>
-        <?php if ($corporate->have_posts()) : $item = 0; ?>
-          <?php while ( $corporate->have_posts() ) : $corporate->the_post(); $item++; ?>
-            <div class="col-md-6">
-              <a id="openPopup<?php echo $item; ?>"><?php the_title(); ?></a>
-              <?php if ( has_post_thumbnail() ) {
-                the_post_thumbnail();
-              } ?>
-            </div>
-          <?php endwhile; ?>
-          <?php wp_reset_postdata(); ?>
-        <?php endif; ?>
-
-        <!-- Loop through the videos and create a video card for each video -->
-        <!-- The variables can be changed to the video data from the database -->
-        <?php
-          for ($i = 1; $i <= 6; $i++) {
-              echo '<div 
-              class="video__container
-              col-sm-12 
-              col-md-6 
-              col-lg-6" 
-              id="openPopup'.$i.'">
-              <div class="video__card card-body">
-              <video id="video'.$i.'" 
-              class="video__video" 
-              poster="//localhost/relay/wp-content/themes/wp-starter/dist/assets/images/corporate-'.$i.'.jpg">
-              <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.webm" type="video/webm"
-              </video></div></div>';
-          }
-        ?>
-
-
-      </div>
-    </div>
-    </div>
+    <?php if ($corporate->have_posts()) : $item = 0; ?>
+      <?php while ( $corporate->have_posts() ) : $corporate->the_post(); 
+        $item++;
+        $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); 
+      ?>
+        <div id="openPopup<?php echo $item; ?>" class="project__item">
+          <div class="project__item__bg" style="background-image: url(<?php echo esc_url($featured_img_url); ?>);"></div>
+          <div class="project__item__cover">
+            <h3 class="m-0"><?php the_title(); ?></h3>
+          </div>
+        </div>
+      <?php endwhile; ?>
+      <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
   </section>
 
   <!-- Loop through the videos and create a modal for each video -->
