@@ -25,14 +25,14 @@
               <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/video-thumb-1.jpg" alt="">
               <div class="about__content__text">
                 <h3>Investor Roadshow Videos</h3>
-                <a href="#">Learn More</a>
+                <a href="<?php echo esc_url(site_url('/corporate-videos/')); ?>">Learn More</a>
               </div>
             </div>
             <div class="about__content__card">
               <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/video-thumb-2.jpg" alt="">
               <div class="about__content__text">
                 <h3>Documentaries</h3>
-                <a href="#">Learn More</a>
+                <a href="<?php echo esc_url(site_url('/documentaries/')); ?>">Learn More</a>
               </div>
             </div>
           </div>
