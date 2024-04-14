@@ -47,20 +47,31 @@ class VideoModal {
     window.onclick = (event) => {
       if (event.target == this.modal) {
         this.close();
+        console.log('close')
       }
     };
   }
 
   open() {
     this.modal.style.display = "block";
+    // Prevent scrolling
+    this.modal.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
   }
 
   close() {
     this.modal.style.display = "none";
+    // Allow scrolling
+    this.modal.style.overflow = "auto";
+    document.body.style.overflow = "auto";
   }
 }
 
-// Usage
+// documentaries - single video
+new VideoModal("videoPopup-sv", "openPopup-sv", "modal__close-sv");
+
+
 for (let i = 1; i <= 6; i++) {
   new VideoModal("videoPopup" + i, "openPopup" + i, "modal__close" + i);
 }
+

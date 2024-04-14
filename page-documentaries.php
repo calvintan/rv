@@ -75,8 +75,9 @@
     </div>
 </div>
   </section>
-
-  <section class="documentaries__single-video">
+  
+  <!-- single video section -->
+  <section id="openPopup-sv" class="documentaries__single-video ">
     <div class="container">
     <div class="row">
       <div class="col-12 documentaries__single-video-title">
@@ -91,7 +92,18 @@
             Your browser does not support HTML5 video.
           </video>
         </div>
-        </div>
+    </div>
+
+    <!-- Single video popup -->
+    <div id="videoPopup-sv" class="modal">
+    <div class="modal__content">
+        <span class="modal__close-sv">&times;</span>
+        <video id="video-sv" controls>
+            <source src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
   </section>
   
 
