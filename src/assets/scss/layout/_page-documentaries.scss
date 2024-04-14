@@ -90,8 +90,19 @@
 
     &__collection:first-child {
       width: 100%;
+      min-width: 100%;
+      video {
+        width: 100%;
+        min-width: 100%;
+      }
     }
 
+    &__single-video {
+      video {
+        width: 100%;
+        min-width: 100%;
+      }
+    }
     &__single-video-title {
       margin-bottom: 1rem;
       margin-top: 6rem;
@@ -145,12 +156,16 @@
   
     &__video {
       width: 100%;
+      max-width: 100%;
+      min-width: 100%;
     }
   
     video {
       width: 100%;
       max-width: 100%;
+      min-width: 100%;
     }
+
   }
   
   .modal {
