@@ -8,7 +8,7 @@
   color: white;
   background: transparent url(../images/bg-hero.jpg) center no-repeat;
   background-size: cover;
-  z-index: 100;
+  z-index: $zindex-modal;
 
   /* Note: Should I darken the background? */
   // &:after {

@@ -1,0 +1,225 @@
+// ********************************************************************
+//
+// Documentaries Page
+//
+// ********************************************************************
+.documentaries {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    // z-index: $zindex-sticky;
+  
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    &__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100%;
+  
+      h1 {
+        position: relative;
+        background: -webkit-linear-gradient(45deg, #BE6CB6, #5B9BC9);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 5rem;
+        font-weight: bold;
+        line-height: 1.125;
+        letter-spacing: -2px;
+        z-index: $zindex-sticky;
+  
+        @media (min-width: 768px) {
+          font-size: 6rem;
+        }
+  
+        @media (min-width: 1200px) {
+          font-size: 7rem;
+        }
+      }
+    
+      p {
+        font-size: 1.25rem;
+        line-height: 1.5;
+        max-width: 560px;
+      }
+    }
+    
+    &__overlay {
+        position: absolute; 
+        width: 100%; 
+        height: 100%; 
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1; 
+    }
+  
+    &__video {
+      position: absolute;
+      top: 0;
+      left: 0; 
+      width: 100%; 
+      height: 100%;
+  
+      video {
+        position: relative;
+        min-width: 100%; 
+        min-height: 100%;
+        width: 100vw; 
+        height: 100%;
+      }
+    }
+
+    &__collection-videos, &__single-video {
+      video {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+    }
+    &__title {
+      margin-bottom: 3rem;
+    }
+
+    &__collection:first-child {
+      width: 100%;
+      min-width: 100%;
+      video {
+        width: 100%;
+        min-width: 100%;
+      }
+    }
+
+    &__single-video {
+      video {
+        width: 100%;
+        min-width: 100%;
+      }
+    }
+    &__single-video-title {
+      margin-bottom: 1rem;
+      margin-top: 6rem;
+    }
+  }
+  
+  .intro {
+    padding: 7.5rem 0 10rem;
+  
+    h1 {
+      font-size: 2.25rem;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+  
+    p {
+      font-size: 1.5rem;
+      line-height: 1.5;
+    }
+  }
+  
+  .example {
+    width: 100vw;
+  
+    display: flex;
+    flex-wrap: wrap;
+  
+    div {
+      width: 50%;
+      height: 300px;
+      background: #000;
+      opacity: .5;
+    }
+  }
+  
+  .video {
+    position: relative;
+  
+    &__container {
+      margin: 0;
+      padding: 0;
+    }
+  
+    &__card {
+      max-width: 50rem;
+      padding: 0;
+      margin: 0;
+      // width: 100vw;
+    }
+  
+    &__video {
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+    }
+  
+    video {
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+    }
+
+  }
+  
+  .modal {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  
+    &__content {
+      position: relative;
+      background: linear-gradient(180deg, #482A7C -17.33%, #03041A 100%);
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+  
+    &__close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: -28px;
+    }
+
+    // &__close-sv {
+    //   color: #aaaaaa;
+    //   float: right;
+    //   font-size: 28px;
+    //   font-weight: bold;
+    //   margin-top: -28px;
+    // }
+    
+    video {
+      width: 100%;
+    }
+  }
+  
+  .close:hover,
+  .close:focus {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  

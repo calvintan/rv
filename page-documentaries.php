@@ -1,37 +1,130 @@
 <?php get_header(); ?>
 
-<main role="main">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <p>This is Documentaries page</p>
-        <?php
-          $press_query = array(
-            'post_type' => 'video',
-            'posts_per_page' => -1,
-            'post_status' => 'publish',
-            'meta_key' => 'type',
-            'meta_value' => 'documentary'
-
-          );
-          $press = new WP_Query( $press_query );
-        ?>
-        <?php if ($press->have_posts()) : ?>
-          <?php while ( $press->have_posts() ) : $press->the_post(); ?>
-            <div class="col-md-6">
-              <a href="#"><?php the_title(); ?></a>
-              <?php if ( has_post_thumbnail() ) {
-                the_post_thumbnail();
-              } ?>
-            </div>
-          <?php endwhile; ?>
-          <?php wp_reset_postdata(); ?>
-        <?php endif; ?>
-
-        <?php get_template_part('loop', 'page'); ?>
-      </div>
+<!-- ********************************************************************
+hero section (shadow overlay + background video + center headings)
+******************************************************************** -->
+<section class="documentaries">
+  <div class="documentaries__text">
+    <div class="container">
+      <h1 class="documentaries__title">
+        <?php single_post_title(); ?>
+      </h1>
     </div>
   </div>
+  <div class="documentaries__overlay"></div>
+  <div class="documentaries__video">
+    <video autoplay muted loop>
+      <source src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/documentaries-short-720.webm" type="video/webm">
+      <source src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/documentaries-short-720.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+</section>
+
+<!-- ********************************************************************
+main section
+******************************************************************** -->
+<main role="main">
+  <section class="intro">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-4">
+          <h1>
+            We are experts in international production for factual content. 
+          </h1>
+        </div>
+        <div class="col-12 col-lg-8">
+          <p>We have experience in production around the world from China to Africa to South America and more. With over 20 years of experience in long form documentaries, we've seen it all and are excited to do more! </p>
+
+          <p>We specialize in survivalist documentaries (check out our work with Ed Stafford!) and VR/360 documentaries (we produced the world's first VR survivalist show in 360).</p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ********************************************************************
+  collection videos section
+  ******************************************************************** -->
+  <section class="documentaries__collection-videos">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 documentaries__title">
+          <h1>Surviving Africa (World's First VR/360degree documentary)</h1>
+        </div>
+        </div>
+        <div class="row">
+          <!-- A collection of 4 videos layout -->
+          <?php
+            for ($i = 1; $i <= 4; $i++) {
+                echo '<div class="documentaries__collection col-sm-12 col-md-4 col-lg-4 text-center" id="openPopup-documentaries'.$i.'">
+                    <div class="documentaries__collection-video'.$i.'">
+                        <video id="video'.$i.'" poster="//localhost/relay/wp-content/themes/wp-starter/dist/assets/images/corporate-'.$i.'.jpg">
+                          <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.webm" type="video/webm">
+                          <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.mp4" type="video/mp4">
+                          Your browser does not support HTML5 video.
+                        </video>
+                    </div>
+                </div>';
+            }
+            ?>
+
+            <?php
+                for ($i = 1; $i <= 4; $i++) {
+                    echo '<div id="videoPopup-documentaries'.$i.'" class="modal">
+                        <div class="modal__content">
+                          <span class="modal__close-documentaries'.$i.'">&times;</span>
+                          <video id="video'.$i.'" controls>
+                            <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.webm" type="video/webm">
+                            <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                      </div>';
+                }
+              ?>
+
+        </div>
+    </div>
+  </section>
+
+  <!-- ********************************************************************
+  single video section
+  ******************************************************************** -->
+
+  <section id="openPopup-sv" class="documentaries__single-video ">
+    <div class="container">
+    <div class="row">
+      <div class="col-12 documentaries__single-video-title">
+        <h1>Finding Light in the Dark</h1>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+          <video muted>
+            <!-- Source can be changed to CMS video link -->
+            <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.webm" type="video/webm">
+            <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+    </div>
+
+    <!-- Single video popup -->
+    <div id="videoPopup-sv" class="modal">
+      <div class="modal__content">
+          <span class="modal__close-sv">&times;</span>
+          <video id="video-sv" controls>
+              <!-- Source can be changed to CMS video link -->
+              <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.webm" type="video/webm">
+              <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+      </div>
+    </div>
+  </section>
+  
+
 </main>
 
 <?php get_footer(); ?>

@@ -1,20 +1,30 @@
 <?php get_header(); ?>
 
+<!-- ********************************************************************
+hero section (shadow overlay + background video + center headings)
+******************************************************************** -->
+
 <section class="corporate">
   <div class="corporate__text">
     <div class="container">
-      <h1 class="corporate__title"><?php single_post_title(); ?></h1>
+      <h1 class="corporate__title">
+        <?php single_post_title(); ?>
+      </h1>
     </div>
   </div>
   <div class="corporate__overlay"></div>
   <div class="corporate__video">
     <video autoplay muted loop>
-      <source src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/corporate-short-720.mp4" type="video/mp4">
       <source src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/corporate-short-720.webm" type="video/webm">
+      <source src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/corporate-short-720.mp4" type="video/mp4">
       Your browser does not support HTML5 video.
     </video>
   </div>
 </section>
+
+<!-- ********************************************************************
+main section
+******************************************************************** -->
 
 <main role="main">
   <section class="intro">
@@ -54,7 +64,7 @@
         $item++;
         $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); 
       ?>
-        <div id="openPopup<?php echo $item; ?>" class="project__item">
+        <div id="openPopup-corporate<?php echo $item; ?>" class="project__item">
           <div class="project__item__bg" style="background-image: url(<?php echo esc_url($featured_img_url); ?>);"></div>
           <div class="project__item__cover">
             <h3 class="m-0"><?php the_title(); ?></h3>
@@ -69,11 +79,12 @@
   <!-- The variables can be changed to the video data from the database -->
   <?php
     for ($i = 1; $i <= 6; $i++) {
-        echo '<div id="videoPopup'.$i.'" class="modal">
+        echo '<div id="videoPopup-corporate'.$i.'" class="modal">
                 <div class="modal__content">
-                  <span class="modal__close'.$i.'">&times;</span>
-                  <video id="video'.$i.'" controls poster="//localhost/relay/wp-content/themes/wp-starter/dist/assets/images/video-thumb-1.jpg">
+                  <span class="modal__close-corporate'.$i.'">&times;</span>
+                  <video id="video'.$i.'" controls poster="//localhost/relay/wp-content/themes/wp-starter/dist/assets/images/corporate-'.$i.'.jpg">
                     <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.webm" type="video/webm">
+                    <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.mp4" type="video/mp4">
                   </video>
                 </div>
               </div>';
