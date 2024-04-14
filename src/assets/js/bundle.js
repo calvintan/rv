@@ -35,43 +35,74 @@ $(document).ready(() => {
   });
 });
 
-// Video Modal
+
+
+
+// Define a class to handle the video modal operations
 class VideoModal {
   constructor(modalId, openButtonId, closeButtonClass) {
+    // Initialize modal elements
     this.modal = document.getElementById(modalId);
     this.openButton = document.getElementById(openButtonId);
     this.closeButton = document.getElementsByClassName(closeButtonClass)[0];
 
-    this.openButton.onclick = () => this.open();
-    this.closeButton.onclick = () => this.close();
-    window.onclick = (event) => {
-      if (event.target == this.modal) {
+    // Bind event handlers
+    this.attachEventListeners();
+  }
+
+  attachEventListeners() {
+    if (this.openButton) {
+      this.openButton.onclick = () => this.open();
+    } else {
+      console.error('Open button not found');
+    }
+
+    if (this.closeButton) {
+      this.closeButton.onclick = () => this.close();
+    } else {
+      console.error('Close button not found');
+    }
+
+    window.addEventListener('click', (event) => {
+      if (event.target === this.modal) {
         this.close();
-        console.log('close')
       }
-    };
+    });
   }
 
   open() {
-    this.modal.style.display = "block";
-    // Prevent scrolling
-    this.modal.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
+    if (this.modal) {
+      this.modal.style.display = "block";
+      this.modal.style.overflow = "hidden";
+      document.body.style.overflow = "hidden"; // Prevent scrolling on the body
+    } else {
+      console.error('Modal not found');
+    }
   }
 
   close() {
-    this.modal.style.display = "none";
-    // Allow scrolling
-    this.modal.style.overflow = "auto";
-    document.body.style.overflow = "auto";
+    if (this.modal) {
+      this.modal.style.display = "none";
+      this.modal.style.overflow = "auto";
+      document.body.style.overflow = "auto"; // Allow scrolling on the body
+    } else {
+      console.error('Modal not found');
+    }
   }
 }
 
-// documentaries - single video
+// Instantiate the class for a single video modal
 new VideoModal("videoPopup-sv", "openPopup-sv", "modal__close-sv");
 
-
-for (let i = 1; i <= 6; i++) {
-  new VideoModal("videoPopup" + i, "openPopup" + i, "modal__close" + i);
+// Create instances of VideoModal for multiple videos using a loop for corporate videos page
+// for loop variables can be changed to match the number of videos on the CMS
+for (let i = 1; i <= 4; i++) {
+  new VideoModal(`videoPopup-corporate${i}`, `openPopup-corporate${i}`, `modal__close-corporate${i}`);
 }
 
+// Create instances of VideoModal for multiple videos using a loop for documentaries page
+// for loop variables can be changed to match the number of videos on the CMS
+
+for (let i = 1; i <= 4; i++) {
+  new VideoModal(`videoPopup-documentaries${i}`, `openPopup-documentaries${i}`, `modal__close-documentaries${i}`);
+}

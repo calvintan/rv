@@ -9,8 +9,8 @@
   <div class="corporate__overlay"></div>
   <div class="corporate__video">
     <video autoplay muted loop>
-      <source src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/corporate-short-720.mp4" type="video/mp4">
-      <source src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/corporate-short-720.webm" type="video/webm">
+      <source src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4" type="video/mp4">
+      <source src="https://dl6.webmfiles.org/cars-nyc_HD.webm" type="video/webm">
       Your browser does not support HTML5 video.
     </video>
   </div>
@@ -35,12 +35,12 @@
     </div>
   </section>
 
-  <section class="example">
+  <!-- <section class="example">
     <div>test</div>
     <div>test</div>
     <div>test</div>
     <div>test</div>
-  </section>
+  </section> -->
 
   <section class="video">
     <div class="container-fluid">
@@ -76,12 +76,13 @@
               col-sm-12 
               col-md-6 
               col-lg-6" 
-              id="openPopup'.$i.'">
+              id="openPopup-corporate'.$i.'">
               <div class="video__card card-body">
               <video id="video'.$i.'" 
               class="video__video" 
               poster="//localhost/relay/wp-content/themes/wp-starter/dist/assets/images/corporate-'.$i.'.jpg">
-              <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.webm" type="video/webm"
+                <source src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4" type="video/mp4">
+                <source src="https://dl6.webmfiles.org/cars-nyc_HD.webm" type="video/webm">
               </video></div></div>';
           }
         ?>
@@ -96,11 +97,12 @@
   <!-- The variables can be changed to the video data from the database -->
   <?php
     for ($i = 1; $i <= 6; $i++) {
-        echo '<div id="videoPopup'.$i.'" class="modal">
+        echo '<div id="videoPopup-corporate'.$i.'" class="modal">
                 <div class="modal__content">
-                  <span class="modal__close'.$i.'">&times;</span>
+                  <span class="modal__close-corporate'.$i.'">&times;</span>
                   <video id="video'.$i.'" controls poster="//localhost/relay/wp-content/themes/wp-starter/dist/assets/images/video-thumb-1.jpg">
-                    <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.webm" type="video/webm">
+                    <source src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4" type="video/mp4">
+                    <source src="https://dl6.webmfiles.org/cars-nyc_HD.webm" type="video/webm">
                   </video>
                 </div>
               </div>';
