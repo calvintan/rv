@@ -134,7 +134,7 @@ main section
       <!-- Single video popup -->
       <div id="videoPopup-sv" class="modal">
         <div class="modal__content">
-          <span class="modal__close-sv">&times;</span>
+          <span class="modal__close modal__close-sv">&times;</span>
           <video id="video-sv" controls>
             <!-- Source can be changed to CMS video link -->
             <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.webm" type="video/webm">

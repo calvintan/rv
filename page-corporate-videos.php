@@ -81,7 +81,7 @@ main section
     for ($i = 1; $i <= 6; $i++) {
         echo '<div id="videoPopup-corporate'.$i.'" class="modal">
                 <div class="modal__content">
-                  <span class="modal__close-corporate'.$i.'">&times;</span>
+                  <span class="modal__close modal__close-corporate'.$i.'">&times;</span>
                   <video id="video'.$i.'" controls poster="//localhost/relay/wp-content/themes/wp-starter/dist/assets/images/corporate-'.$i.'.jpg">
                     <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.webm" type="video/webm">
                     <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.mp4" type="video/mp4">

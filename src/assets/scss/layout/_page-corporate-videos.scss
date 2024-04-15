@@ -211,7 +211,7 @@
   align-items: center;
   justify-content: center;
   position: fixed;
-  z-index: 1;
+  z-index: $zindex-modal;
   left: 0;
   top: 0;
   width: 100%;
@@ -229,11 +229,17 @@
   }
 
   &__close {
+    cursor: pointer;
     color: #aaaaaa;
-    float: right;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 32px;
+    height: 32px;
     font-size: 28px;
     font-weight: bold;
-    margin-top: -28px;
+    line-height: 32px;
+    text-align: center;
   }
   
   video {
