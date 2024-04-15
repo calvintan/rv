@@ -112,3 +112,44 @@ for (let i = 1; i <= 6; i++) {
 for (let i = 1; i <= 4; i++) {
   new VideoModal(`videoPopup-documentaries${i}`, `openPopup-documentaries${i}`, `modal__close-documentaries${i}`);
 }
+
+// ********************************************************************
+//
+// About page gradient animation
+//
+// ********************************************************************
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  const stop1 = document.getElementById('stop1');
+  const stop2 = document.getElementById('stop2');
+
+  let duration = 10000; // Duration of the transition in milliseconds
+  let startTime = null;
+
+  function animateGradient(timestamp) {
+      if (!startTime) startTime = timestamp;
+      let elapsedTime = timestamp - startTime;
+
+      let progress = elapsedTime / duration;
+      if (progress > 1) {
+          progress -= Math.floor(progress);
+          startTime = timestamp;
+      }
+
+      let hue1 = interpolateHue(205, 306, progress);
+      let hue2 = interpolateHue(306, 205, progress);
+
+      stop1.setAttribute('stop-color', `hsl(${hue1}, 49%, 57%)`);
+      stop2.setAttribute('stop-color', `hsl(${hue2}, 39%, 58%)`);
+
+      requestAnimationFrame(animateGradient);
+  }
+
+  function interpolateHue(start, end, ratio) {
+      let distance = end - start;
+      return start + distance * ratio;
+  }
+
+  requestAnimationFrame(animateGradient);
+});
+

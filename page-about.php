@@ -43,7 +43,20 @@
         </div>
       </div>
     </div>
-    <div class="about__content__bg"></div>
+    <div class="about__content__bg">
+      <svg fill="none" height="720" viewBox="0 0 1440 720" width="1440" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <radialGradient id="a" cx="0" cy="0" gradientTransform="matrix(1440.99930342 329.00075065 -490.01542037 2146.23181865 20.4998 35.5)" gradientUnits="userSpaceOnUse" r="1">
+            <stop id="stop1" offset="0" stop-color="#be6cb6"/>
+            <stop id="stop2" offset="1" stop-color="#5c9bc7"/>
+        </radialGradient>
+        <clipPath id="b">
+            <path d="m0 0h1440v720h-1440z"/>
+        </clipPath>
+        <g clip-path="url(#b)">
+            <path d="m-12 717.5-10-361.5 633-239-95 270.5 945.5-385.5v354l-777 317.5 40.5-263z" fill="url(#a)"/>
+        </g>
+      </svg>
+    </div>
   </section>
   <section class="about__team">
     <div class="container">
