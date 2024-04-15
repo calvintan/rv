@@ -77,6 +77,7 @@ main section
 
   <!-- Loop through the videos and create a modal for each video -->
   <!-- The variables can be changed to the video data from the database -->
+
   <?php for ($i = 1; $i <= 6; $i++): ?> 
     <div id="videoPopup-corporate<?php echo $i ?>" class="modal">
       <div class="modal__content">
