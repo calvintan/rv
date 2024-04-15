@@ -130,8 +130,8 @@ main section
       <!-- Single video popup -->
       <div id="videoPopup-sv" class="modal">
         <div class="modal__content">
-          <span class="btn-x modal__close modal__close-sv">&times;</span>
-          <video id="video-sv" controls poster="<?php echo get_template_directory_uri(); ?>/dist/assets/images/documentaries-5.jpg">
+          <span class="btn-x modal__close-sv">&times;</span>
+          <video id="video-sv" controls controlsList="nodownload" poster="<?php echo get_template_directory_uri(); ?>/dist/assets/images/documentaries-5.jpg">
             <!-- Source can be changed to CMS video link -->
             <source src="https://relay.sgp1.cdn.digitaloceanspaces.com/documentaries-5.mp4" type="video/mp4">
             Your browser does not support the video tag.
