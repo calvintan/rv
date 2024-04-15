@@ -37,7 +37,6 @@ $(document).ready(() => {
 
 
 
-
 // Define a class to handle the video modal operations
 class VideoModal {
   constructor(modalId, openButtonId, closeButtonClass) {
@@ -53,15 +52,11 @@ class VideoModal {
   attachEventListeners() {
     if (this.openButton) {
       this.openButton.onclick = () => this.open();
-    } else {
-      console.error('Open button not found');
-    }
+    } 
 
     if (this.closeButton) {
       this.closeButton.onclick = () => this.close();
-    } else {
-      console.error('Close button not found');
-    }
+    } 
 
     window.addEventListener('click', (event) => {
       if (event.target === this.modal) {
