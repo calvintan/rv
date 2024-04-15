@@ -25,12 +25,18 @@
       @media (min-width: 1200px) {
         font-size: 7rem;
       }
+      @media (min-width: 1600px) {
+        font-size: 10rem;
+      }
     }
   
     p {
       font-size: 1.25rem;
       line-height: 1.5;
       max-width: 560px;
+      @media (min-width: 1600px) {
+        font-size: 3rem;
+      }
     }
   }
 
