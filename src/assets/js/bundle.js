@@ -75,6 +75,10 @@ class VideoModal {
       this.modal.style.display = "flex";
       this.modal.style.overflow = "hidden";
       document.body.style.overflow = "hidden"; // Prevent scrolling on the body
+      const video = this.modal.querySelector('video');
+      if (video) {
+        video.play();
+      }
     } else {
       console.error('Modal not found');
     }
