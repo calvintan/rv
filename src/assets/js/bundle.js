@@ -75,6 +75,10 @@ class VideoModal {
       this.modal.style.display = "flex";
       this.modal.style.overflow = "hidden";
       document.body.style.overflow = "hidden"; // Prevent scrolling on the body
+      const video = this.modal.querySelector('video');
+      if (video) {
+        video.play();
+      }
     } else {
       console.error('Modal not found');
     }
@@ -124,25 +128,58 @@ class VideoModal {
 //
 // ********************************************************************
 
+// document.addEventListener('DOMContentLoaded', (event) => {
+//   const stop1 = document.getElementById('stop1');
+//   const stop2 = document.getElementById('stop2');
+//   const stop3 = document.getElementById('stop3');
+//   const stop4 = document.getElementById('stop4');
+//   const stop5 = document.getElementById('stop5'); // New stop
+
+//   let duration = 10000; // Duration of the transition in milliseconds
+//   let startTime = null;
+
+//   function animateGradient(timestamp) {
+//       if (!startTime) startTime = timestamp;
+//       let elapsedTime = timestamp - startTime;
+
+//       let progress = elapsedTime / duration;
+//       if (progress > 1) {
+//           progress -= Math.floor(progress);
+//           startTime = timestamp;
+//       }
+//       let hue1 = interpolateHue(306, 205, progress);
+//       let hue2 = interpolateHue(205, 306, progress);
+//       let hue3 = interpolateHue(306, 205, progress);
+//       let hue4 = interpolateHue(205, 306, progress);
+//       let hue5 = interpolateHue(205, 306, progress); // New hue
+
+//       stop1.setAttribute('stop-color', `hsl(${hue2}, 39%, 58%)`);
+//       stop2.setAttribute('stop-color', `hsl(${hue1}, 49%, 57%)`);
+//       stop3.setAttribute('stop-color', `hsl(${hue4}, 39%, 58%)`);
+//       stop4.setAttribute('stop-color', `hsl(${hue3}, 49%, 57%)`);
+//       stop5.setAttribute('stop-color', `hsl(${hue5}, 49%, 57%)`); // New stop-color
+
+//       requestAnimationFrame(animateGradient);
+//   }
+
+//   function interpolateHue(start, end, ratio) {
+//       let distance = end - start;
+//       return start + distance * ratio;
+//   }
+
+//   requestAnimationFrame(animateGradient);
+// });
+
 document.addEventListener('DOMContentLoaded', (event) => {
   const stop1 = document.getElementById('stop1');
   const stop2 = document.getElementById('stop2');
 
-  let duration = 3500; // Duration of the transition in milliseconds
-  let startTime = null;
+  let hue1 = 205;
+  let hue2 = 306;
 
-  function animateGradient(timestamp) {
-      if (!startTime) startTime = timestamp;
-      let elapsedTime = timestamp - startTime;
-
-      let progress = elapsedTime / duration;
-      if (progress > 1) {
-          progress -= Math.floor(progress);
-          startTime = timestamp;
-      }
-
-      let hue1 = interpolateHue(205, 306, progress);
-      let hue2 = interpolateHue(306, 205, progress);
+  function animateGradient() {
+      hue1 = (hue1 + 0.5) % 360;
+      hue2 = (hue2 + 0.5) % 360;
 
       stop1.setAttribute('stop-color', `hsl(${hue1}, 49%, 57%)`);
       stop2.setAttribute('stop-color', `hsl(${hue2}, 39%, 58%)`);
@@ -150,10 +187,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
       requestAnimationFrame(animateGradient);
   }
 
-  function interpolateHue(start, end, ratio) {
-      let distance = end - start;
-      return start + distance * ratio;
-  }
-
-  requestAnimationFrame(animateGradient);
+  animateGradient();
 });
