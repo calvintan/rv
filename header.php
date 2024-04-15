@@ -45,7 +45,7 @@
             </li>
             <li>
               <h3>WeChat</h3>
-              <a>XFSP1989</a>
+              <a data-bs-toggle="modal" data-bs-target="#exampleModal">XFSP1989 <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/icon-external.svg" alt="open in pop-up"></a>
             </li>
             <li>
               <h3>WhatsApp</h3>
