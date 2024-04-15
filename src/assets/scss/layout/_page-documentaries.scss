@@ -28,12 +28,25 @@
       text-align: center;
       height: 100%;
   
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      
       h1 {
         position: relative;
         background: -webkit-linear-gradient(45deg, #BE6CB6, #5B9BC9);
-        background-clip: text;
+        background-size: 200% 200%;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        animation: gradient 5s ease infinite;
         margin: 0;
         text-transform: uppercase;
         font-size: 3rem;
