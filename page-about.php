@@ -6,10 +6,24 @@
       <div class="row">
         <div class="col">
           <ul class="about__header__wrap">
-            <li><span>Creative Video Production</span></li>
-            <li><span><img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/about-gif-1.jpg" alt=""></span><span>Corporate Videos</span></li>
-            <li><span>And Factual Content</span><span><img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/about-gif-2.jpg" alt=""></span></li>
-            <li><span>Global Network Of Resources</span></li>
+            <li>
+              <span>Creative Video Production</span>
+            </li>
+            <li>
+              <span class="gif">
+                <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/about-gif-1.gif" alt="">
+              </span>
+              <span>Corporate Videos</span>
+            </li>
+            <li>
+              <span>& Factual Content</span>
+              <span class="gif">
+                <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/about-gif-2.gif" alt="">
+              </span>
+            </li>
+            <li>
+              <span>Global Network Of Resources</span>
+            </li>
           </ul>
         </div>
       </div>
