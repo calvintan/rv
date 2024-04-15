@@ -85,7 +85,7 @@ main section
         <div id="videoPopup-documentaries<?php echo $i ?>" class="modal">
           <div class="modal__content">
             <span class="btn-x modal__close-documentaries<?php echo $i ?>">&times;</span>
-            <video id="video<?php echo $i ?>" controls poster="<?php echo get_template_directory_uri(); ?>/dist/assets/images/documentaries-<?php echo $i ?>.jpg">
+            <video id="video<?php echo $i ?>" controls controlsList="nodownload" poster="<?php echo get_template_directory_uri(); ?>/dist/assets/images/documentaries-<?php echo $i ?>.jpg">
               <source src="https://relay.sgp1.cdn.digitaloceanspaces.com/documentaries-<?php echo $i ?>.mp4" type="video/mp4">
             </video>
           </div>

@@ -85,6 +85,12 @@ class VideoModal {
       this.modal.style.display = "none";
       this.modal.style.overflow = "auto";
       document.body.style.overflow = "auto"; // Allow scrolling on the body
+
+      // Pause the video
+      const video = this.modal.querySelector('video');
+      if (video) {
+        video.pause();
+      }
     } else {
       console.error('Modal not found');
     }
@@ -97,21 +103,20 @@ class VideoModal {
 //
 // ********************************************************************
 
-// Instantiate the class for a single video modal for bottom of documentaries page
-new VideoModal("videoPopup-sv", "openPopup-sv", "modal__close-sv");
+  // Instantiate the class for a single video modal for bottom of documentaries page
+ new VideoModal("videoPopup-sv", "openPopup-sv", "modal__close-sv");
 
-// Create instances of VideoModal for multiple videos using a loop for corporate videos page
-// for loop variables can be changed to match the number of videos on the CMS
-for (let i = 1; i <= 6; i++) {
-  new VideoModal(`videoPopup-corporate${i}`, `openPopup-corporate${i}`, `modal__close-corporate${i}`);
-}
+  // Create instances of VideoModal for multiple videos using a loop for corporate videos page
+  // for loop variables can be changed to match the number of videos on the CMS
+  for (let i = 1; i <= 6; i++) {
+    new VideoModal(`videoPopup-corporate${i}`, `openPopup-corporate${i}`, `modal__close-corporate${i}`);
+  }
 
-// Create instances of VideoModal for multiple videos using a loop for documentaries page
-// for loop variables can be changed to match the number of videos on the CMS
-
-for (let i = 1; i <= 4; i++) {
-  new VideoModal(`videoPopup-documentaries${i}`, `openPopup-documentaries${i}`, `modal__close-documentaries${i}`);
-}
+  // Create instances of VideoModal for multiple videos using a loop for documentaries page
+  // for loop variables can be changed to match the number of videos on the CMS
+  for (let i = 1; i <= 4; i++) {
+    new VideoModal(`videoPopup-documentaries${i}`, `openPopup-documentaries${i}`, `modal__close-documentaries${i}`);
+  }
 
 // ********************************************************************
 //
@@ -152,4 +157,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   requestAnimationFrame(animateGradient);
 });
-
