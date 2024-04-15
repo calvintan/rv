@@ -10,19 +10,33 @@
     </li>
     <li>
       <h3>WeChat</h3>
-      <a href="#">XFSP1989</a>
+      <a>XFSP1989</a>
     </li>
     <li>
       <h3>WhatsApp</h3>
-      <a href="#">Abe</a>
+      <a data-bs-toggle="modal" data-bs-target="#exampleModal">Abe <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/icon-external.svg" alt="open in pop-up"></a>
     </li>
   </ul>
   <div class="footer__bottom">
     <ul>
-      <li><a href="#">Privacy</a></li>
-      <li><a href="#">Terms & Conditions</a></li>
+      <li><a href="<?php echo esc_url(site_url('/privacy-policy/')); ?>">Privacy</a></li>
     </ul>
     <p class="text-center m-0">© 2024 Relay.com. All Rights Reserved.</p>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add us on WhatsApp</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img style="width: 100%; height: auto;" src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/qr-code.jpg" alt="QR code">
+      </div>
+    </div>
   </div>
 </div>
 

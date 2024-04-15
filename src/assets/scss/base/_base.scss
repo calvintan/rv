@@ -35,11 +35,70 @@ main {
   }
 }
 
-.page-home main {
-  padding-top: 6rem;
-}
-
 .no-scroll {
   position: fixed;
   width: 100vw;
+}
+
+.btn-gradient {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 2px;
+  opacity: 0.8;
+  border-radius: 99px;
+  background: rgb(177, 131, 255);
+  background: linear-gradient(
+    90deg,
+    rgb(189, 109, 183) 0%,
+    rgb(100, 152, 200) 100%
+  );
+
+  a {
+    display: inline-flex;
+    color: white;
+    background-color: #170f35;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 1rem 2rem;
+    border-radius: 99px;
+    transition: background-color 0.25s ease-out;
+
+    &:hover {
+      background-color: rgba(15,10,30,0.8);
+    }
+  }
+
+  &-sm a {
+    font-size: 0.875rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+.page-home {
+  main {
+    padding-top: 6rem;
+  }
+}
+
+.page-privacy-policy {
+  main {
+    padding-top: 80px;
+  }
+
+  h3 {
+    margin: 2rem 0 1rem;
+
+    &:first-child {
+      margin-top: 1rem;
+    }
+  }
+
+  a {
+    color: rgba(255, 255, 255, 1);
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
 }

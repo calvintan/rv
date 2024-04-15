@@ -44,10 +44,17 @@
     }
 
     a {
+      display: inline-flex;
+      align-items: center;
       color: white;
       text-decoration: none;
       font-size: 1.125rem;
       line-height: 1;
+      cursor: pointer;
+    }
+
+    a > img {
+      margin-left: 0.25rem;
     }
   }
 
@@ -64,6 +71,15 @@
 
     li + li {
       margin-left: 1.5rem;
+    }
+
+    a {
+      color: rgba(255, 255, 255, 0.5);
+      transition: color 0.25s ease-out;
+
+      &:hover {
+        color: rgba(255, 255, 255, 1);
+      }
     }
   }
 }
