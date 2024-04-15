@@ -15,8 +15,8 @@
   <div class="hero__cover"></div>
   <div class="hero__video">
     <video autoplay loop muted>
-      <source src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/hero.webm" type="video/webm">
-      <source src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/hero.mp4" type="video/mp4">
+      <source src="https://relay.sgp1.cdn.digitaloceanspaces.com/hero.webm" type="video/webm">
+      <source src="https://relay.sgp1.cdn.digitaloceanspaces.com/hero.mp4" type="video/mp4">
     </video>
   </div>
 </section>
@@ -27,9 +27,9 @@
       <div class="row">
         <div class="col">
           <div class="about__vid">
-            <video controls>
-              <source src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/relay-showreel.webm" type="video/webm">
-              <source src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/relay-showreel.mp4" type="video/mp4">
+            <video controls controlslist="nodownload" autoplay muted poster="<?php echo get_template_directory_uri(); ?>/dist/assets/images/poster.jpg">
+              <source src="https://relay.sgp1.cdn.digitaloceanspaces.com/relay-showreel.webm" type="video/webm">
+              <source src="https://relay.sgp1.cdn.digitaloceanspaces.com/relay-showreel.mp4" type="video/mp4">
               Sorry, your browser doesn't support embedded videos.
             </video>
           </div>
@@ -67,7 +67,9 @@
                 
                 <p>We've helped TME, Pinduoduo, Mogujie, Sogou, Meituan, 360Finance, Pop Mart, Hesai, Leap Motor and many more companies to raise over 8 billion USD through making videos to explain their company and products in roadshow presentations.</p>
 
-                <a href="<?php echo esc_url(site_url('/corporate-videos/')); ?>">Learn More</a>
+                <div class="btn-gradient btn-gradient-sm">
+                  <a href="<?php echo esc_url(site_url('/corporate-videos/')); ?>">Learn More</a>
+                </div>
               </div>
             </div>
             
@@ -82,7 +84,9 @@
 
                 <p>With over 20 years of experience in long form documentaries, we've seen it all and are excited to do even more! We specialize in survivalist documentaries (check out our work with Ed Stafford!) and VR/360 documentaries (we produced the world's first VR survivalist show in 360).</p>
 
-                <a href="<?php echo esc_url(site_url('/documentaries/')); ?>">Learn More</a>
+                <div class="btn-gradient btn-gradient-sm">
+                  <a href="<?php echo esc_url(site_url('/documentaries/')); ?>">Learn More</a>
+                </div>
               </div>
             </div>
           </div>

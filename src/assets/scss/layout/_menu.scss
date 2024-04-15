@@ -10,25 +10,24 @@
   background-size: cover;
   z-index: $zindex-modal;
 
-  /* Note: Should I darken the background? */
-  // &:after {
-  //   content: '';
-  //   display: block;
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100vw;
-  //   height: 100vh;
-  //   background: black;
-  //   opacity: 0.5;
-  // }
-
   &__bg {
     position: absolute;
     top: 0;
     left: 0; 
     width: 100%;
     height: 100%;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.4);
+      opacity: 0;
+    }
 
     img {
       position: absolute;
@@ -97,12 +96,22 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    padding: 0;
-    margin: 0 0 160px;
+    padding: 0 0.75rem;
+    margin: 0 0 320px;
     list-style: none;
-    font-size: 4rem;
-    line-height: 1.5;
+    font-size: 3rem;
+    line-height: 1.125;
     max-width: 720px;
+
+    @media (min-width: 992px) {
+      line-height: 1.5;
+      font-size: 3.5rem;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 4rem;
+      margin: 0 0 160px;
+    }
 
     li {
       border-bottom: 1px solid rgba(255, 255, 255, 0.25);
@@ -127,19 +136,30 @@
 
 .overlay__contact.footer__contact {
   position: absolute;
-  right: 0;
+  left: 0;
   bottom: 0;
   margin: 0 0 160px;
-  flex-direction: column;
-  width: 240px;
+  padding-left: 0.75rem;
+  flex-direction: row;
+  gap: 2.5rem;
+  
+  @media (min-width: 1200px) {
+    width: 240px;
+    left: unset;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+  }
 
   li {
     text-align: left;
   }
 
-  li + li {
-    margin-top: 2rem;
-  }
+  // li + li {
+  //   @media (min-width: 1200px) {
+  //     margin-top: 2rem;
+  //   }
+  // }
 }
 
 /* menu icon */

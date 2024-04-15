@@ -21,8 +21,8 @@ hero section (shadow overlay + background video + center headings)
   <div class="documentaries__overlay"></div>
   <div class="documentaries__video">
     <video autoplay muted loop>
-      <source src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/documentaries-short-720.webm" type="video/webm">
-      <source src="<?php echo get_template_directory_uri(); ?>/dist/assets/videos/documentaries-short-720.mp4" type="video/mp4">
+      <source src="https://relay.sgp1.cdn.digitaloceanspaces.com/documentaries-short-720.webm" type="video/webm">
+      <source src="https://relay.sgp1.cdn.digitaloceanspaces.com/documentaries-short-720.mp4" type="video/mp4">
       Your browser does not support HTML5 video.
     </video>
   </div>
@@ -81,20 +81,16 @@ main section
       </div>
       <?php endif; ?>
 
-      <?php
-        for ($i = 1; $i <= 4; $i++) {
-            echo '<div id="videoPopup-documentaries'.$i.'" class="modal">
-                <div class="modal__content">
-                  <span class="modal__close-documentaries'.$i.'">&times;</span>
-                  <video id="video'.$i.'" controls>
-                    <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.webm" type="video/webm">
-                    <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </div>';
-        }
-      ?>
+      <?php for ($i = 1; $i <= 4; $i++): ?> 
+        <div id="videoPopup-documentaries<?php echo $i ?>" class="modal">
+          <div class="modal__content">
+            <span class="btn-x modal__close-documentaries<?php echo $i ?>">&times;</span>
+            <video id="video<?php echo $i ?>" controls controlsList="nodownload" poster="<?php echo get_template_directory_uri(); ?>/dist/assets/images/documentaries-<?php echo $i ?>.jpg">
+              <source src="https://relay.sgp1.cdn.digitaloceanspaces.com/documentaries-<?php echo $i ?>.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      <?php endfor; ?>
     </div>
   </section>
 
@@ -134,11 +130,10 @@ main section
       <!-- Single video popup -->
       <div id="videoPopup-sv" class="modal">
         <div class="modal__content">
-          <span class="modal__close modal__close-sv">&times;</span>
-          <video id="video-sv" controls>
+          <span class="btn-x modal__close modal__close-sv">&times;</span>
+          <video id="video-sv" controls poster="<?php echo get_template_directory_uri(); ?>/dist/assets/images/documentaries-5.jpg">
             <!-- Source can be changed to CMS video link -->
-            <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.webm" type="video/webm">
-            <source src="//localhost/relay/wp-content/themes/wp-starter/dist/assets/videos/hero.mp4" type="video/mp4">
+            <source src="https://relay.sgp1.cdn.digitaloceanspaces.com/documentaries-5.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>

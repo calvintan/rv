@@ -85,6 +85,12 @@ class VideoModal {
       this.modal.style.display = "none";
       this.modal.style.overflow = "auto";
       document.body.style.overflow = "auto"; // Allow scrolling on the body
+
+      // Pause the video
+      const video = this.modal.querySelector('video');
+      if (video) {
+        video.pause();
+      }
     } else {
       console.error('Modal not found');
     }
@@ -97,18 +103,57 @@ class VideoModal {
 //
 // ********************************************************************
 
-// Instantiate the class for a single video modal for bottom of documentaries page
-new VideoModal("videoPopup-sv", "openPopup-sv", "modal__close-sv");
+  // Instantiate the class for a single video modal for bottom of documentaries page
+ new VideoModal("videoPopup-sv", "openPopup-sv", "modal__close-sv");
 
-// Create instances of VideoModal for multiple videos using a loop for corporate videos page
-// for loop variables can be changed to match the number of videos on the CMS
-for (let i = 1; i <= 6; i++) {
-  new VideoModal(`videoPopup-corporate${i}`, `openPopup-corporate${i}`, `modal__close-corporate${i}`);
-}
+  // Create instances of VideoModal for multiple videos using a loop for corporate videos page
+  // for loop variables can be changed to match the number of videos on the CMS
+  for (let i = 1; i <= 6; i++) {
+    new VideoModal(`videoPopup-corporate${i}`, `openPopup-corporate${i}`, `modal__close-corporate${i}`);
+  }
 
-// Create instances of VideoModal for multiple videos using a loop for documentaries page
-// for loop variables can be changed to match the number of videos on the CMS
+  // Create instances of VideoModal for multiple videos using a loop for documentaries page
+  // for loop variables can be changed to match the number of videos on the CMS
+  for (let i = 1; i <= 4; i++) {
+    new VideoModal(`videoPopup-documentaries${i}`, `openPopup-documentaries${i}`, `modal__close-documentaries${i}`);
+  }
 
-for (let i = 1; i <= 4; i++) {
-  new VideoModal(`videoPopup-documentaries${i}`, `openPopup-documentaries${i}`, `modal__close-documentaries${i}`);
-}
+// ********************************************************************
+//
+// About page gradient animation
+//
+// ********************************************************************
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  const stop1 = document.getElementById('stop1');
+  const stop2 = document.getElementById('stop2');
+
+  let duration = 3500; // Duration of the transition in milliseconds
+  let startTime = null;
+
+  function animateGradient(timestamp) {
+      if (!startTime) startTime = timestamp;
+      let elapsedTime = timestamp - startTime;
+
+      let progress = elapsedTime / duration;
+      if (progress > 1) {
+          progress -= Math.floor(progress);
+          startTime = timestamp;
+      }
+
+      let hue1 = interpolateHue(205, 306, progress);
+      let hue2 = interpolateHue(306, 205, progress);
+
+      stop1.setAttribute('stop-color', `hsl(${hue1}, 49%, 57%)`);
+      stop2.setAttribute('stop-color', `hsl(${hue2}, 39%, 58%)`);
+
+      requestAnimationFrame(animateGradient);
+  }
+
+  function interpolateHue(start, end, ratio) {
+      let distance = end - start;
+      return start + distance * ratio;
+  }
+
+  requestAnimationFrame(animateGradient);
+});
