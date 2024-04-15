@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const stop1 = document.getElementById('stop1');
   const stop2 = document.getElementById('stop2');
 
-  let duration = 10000; // Duration of the transition in milliseconds
+  let duration = 3500; // Duration of the transition in milliseconds
   let startTime = null;
 
   function animateGradient(timestamp) {
